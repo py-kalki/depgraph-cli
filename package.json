@@ -1,0 +1,65 @@
+{
+  "name": "depgraph",
+  "version": "1.0.0",
+  "description": "Dependency health scores and abandonment risk forecasting for npm projects",
+  "keywords": [
+    "dependency",
+    "health",
+    "security",
+    "npm",
+    "audit",
+    "supply-chain"
+  ],
+  "homepage": "https://depgraph.vedanshh.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/depgraph/cli"
+  },
+  "license": "MIT",
+  "bin": {
+    "depgraph": "./bin/depgraph.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "bin/"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "dev": "ts-node src/index.ts",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run type-check && npm run build && npm test",
+    "release": "npm version patch && npm publish",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "chalk": "4.1.2",
+    "commander": "^12.1.0",
+    "ora": "^5.4.1",
+    "semver": "^7.6.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.14.0",
+    "@types/semver": "^7.5.8",
+    "jest": "^30.4.2",
+    "jest-environment-node": "^30.4.1",
+    "rimraf": "^6.0.1",
+    "ts-jest": "^29.4.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.0"
+  },
+  "overrides": {
+    "ansi-styles": "^4.3.0"
+  }
+}

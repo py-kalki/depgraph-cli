@@ -1,0 +1,9 @@
+src/
+__tests__/
+*.ts
+!dist/**/*.d.ts
+jest.config.js
+tsconfig.json
+.env*
+.gitignore
+*.map
