@@ -11,8 +11,8 @@ import { AuthError, TimeoutError, ApiError, NetworkError } from '../types';
 const API_BASE_URL =
   process.env['DEPGRAPH_API_URL'] ?? 'https://depgraph.vedanshh.dev';
 
-/** Request timeout in milliseconds (PRD: scan 200 deps in <10s; 30s is a generous upper limit) */
-const TIMEOUT_MS = 30_000;
+/** Request timeout in milliseconds (Increased to 90s for huge monorepos) */
+const TIMEOUT_MS = 90_000;
 
 // ─── Main scanning function ───────────────────────────────────────────────────
 
