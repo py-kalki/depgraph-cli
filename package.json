@@ -1,5 +1,5 @@
 {
-  "name": "depgraph",
+  "name": "depgraph-scanner",
   "version": "1.0.0",
   "description": "Dependency health scores and abandonment risk forecasting for npm projects",
   "keywords": [
